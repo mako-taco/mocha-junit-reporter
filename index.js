@@ -242,7 +242,25 @@ function MochaJUnitReporter(runner, options) {
     }.bind(this));
   }
 
-  this._runner.on('end', function(){
+  this._runner.on('end', function () {
+    // attach file to everything
+    var file = testsuites[0].testsuite[0]._attr.file;
+    var nodes = testsuites.slice(0);
+    while (nodes.length) {
+      var node = nodes.pop();
+
+      if (node._attr) {
+        node._attr.file = file;
+      }
+
+      if (node.testsuite) {
+        nodes = nodes.concat(node.testsuite);
+      }
+
+      if (node.testcase) {
+        nodes = nodes.concat(node.testcase);
+      }
+    }
     this.flush(testsuites);
   }.bind(this));
 }

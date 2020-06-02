@@ -1,7 +1,7 @@
 {
-  "name": "mocha-junit-reporter",
-  "version": "1.23.3",
-  "description": "A JUnit reporter for mocha.",
+  "name": "mocha-junit-circle-report",
+  "version": "1.0.0",
+  "description": "A JUnit reporter for mocha + circleci. Forked from mocha-junit-reporter",
   "main": "index.js",
   "scripts": {
     "ci": "npm run lint && npm run test",
@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/michaelleeallen/mocha-junit-reporter"
+    "url": "https://github.com/mako-taco/mocha-junit-reporter"
   },
   "keywords": [
     "mocha",
     "junit",
+    "circleci",
     "reporter"
   ],
   "author": {
-    "name": "Michael Allen",
-    "email": "michael.lee.allen@gmail.com"
+    "name": "Jake Scott"
   },
   "license": "MIT",
   "devDependencies": {
